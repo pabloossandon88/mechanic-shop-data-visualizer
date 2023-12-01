@@ -95,11 +95,7 @@
         var cont = 0;
         data.forEach((row) => {
 
-            //console.log('row :: ', row);
-            //console.log('count :: ', cont);
-
             if(cont == 0 ) {
-                //console.log('cont == 0');
                 innerH += `<div class="item">`;
             }
 
@@ -123,8 +119,6 @@
 
             cont++;
 
-            //console.log('count :: ', cont);
-
             if(cont == 6 ) {
                 innerH += `</div>`;
                 cont = 0 ;
@@ -134,28 +128,25 @@
         });
 
         if(cont != 6) {
-            //console.log('cont != 6');
             innerH += `</div>`;
         }
 
+        console.log('final');
         appDiv.innerHTML = innerH;
             
     });
 
 
-    </script>
+    $(document).ready(function(){
+        
+        console.log('document ready');
 
-    <script type="text/javascript">
-        $(document).ready(function(){
-          
-          console.log('document ready');
-
-          $('.container-visualizer').slick({
+        $('.container-visualizer').slick({
             dots: true,
             autoplay: true,
             autoplaySpeed: 2000,
-          });
         });
+    });
     </script>
 
 </body>
