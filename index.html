@@ -27,6 +27,18 @@
             background: black;
             box-shadow: 0px 70px 160px -42px rgba(0,0,0,0.3);
             border-radius: 10px;
+            color: white;
+        }
+
+        .container-visualizer .item{
+            display: flex;
+            margin: 10px auto;
+            border-bottom: 2px solid white;
+
+        }
+
+        .container-visualizer .item:nth-child(){
+            max-width: 18vw;
         }
 
 
@@ -56,12 +68,13 @@
         data.forEach((row) => {
         // Do something with each row here.
             console.log(row);
-            appDiv.innerHTML += `<div class="item">
-                <div class="photo"></div>
-                <h4>${row.MARCA}</h4>
-                <p>${row.MODELO} </p>
-                <p>${row.PATENTE} </p>
-                <p>${row.PROCESO} </p>
+            appDiv.innerHTML += `
+                <div class="item">
+                    <div class="photo"></div>
+                    <h4>${row.MARCA}</h4>
+                    <p>${row.MODELO} </p>
+                    <p>${row.PATENTE} </p>
+                    <p>${row.PROCESO} </p>
                 </div>`;
             });
     });
