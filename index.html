@@ -37,29 +37,30 @@
     
 
     <script>
+
         
-        var request = new XMLHttpRequest();
-        request.open('GET', 'https://docs.google.com/spreadsheets/d/1mVAvv0lEFpYTzURD5ep_kPh4ww6-_BX7p_4sXq_ylik/edit#gid=0', true);
+        import "./style.css";
 
-        request.onload = function() {
-            console.log('request request :: ', request);
-            
-        if (request.status >= 200 && request.status < 400) {
-            // Success!
-            var data = JSON.parse(request.responseText);
-            console.log('DATA : ', data);
+        // Write Javascript code!
+        const appDiv = document.getElementById("app");
+        appDiv.innerHTML = `<h1>Heroes</h1>`;
 
-        } else {
-            // We reached our target server, but it returned an error
 
-        }
-        };
+        fetch(
+        "https://spreadsheets.google.com/feeds/list/1mVAvv0lEFpYTzURD5ep_kPh4ww6-_BX7p_4sXq_ylik/1/public/full?alt=json"
+        )
+        .then(response => response.json())
+        .then(json => {
+            json.feed.entry.map(item => {
+            appDiv.innerHTML += `<div class="item">
+            <div class="photo"></div>
+            <h4>${item.gsx$nombre.$t} ${item.gsx$apellido.$t}</h4>
+            <p>${item.gsx$universo.$t} </p>
+            </div>`;
+            });
+        });
 
-        request.onerror = function() {
-        // There was a connection error of some sort
-        };
 
-        request.send();
     </script>
     
     
