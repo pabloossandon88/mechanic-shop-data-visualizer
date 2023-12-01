@@ -32,9 +32,8 @@
         }
 
         .container-visualizer .item{
-            margin: 10px auto;
-            border-bottom: 2px solid white;
-            border-right: 2px solid white;
+            border-bottom: 2px solid #343434;
+            border-right: 2px solid #343434;
             width: 100%;
 
         }
@@ -80,7 +79,7 @@
                 appDiv.innerHTML += `
                     <div class="item">
                         <div class="photo"></div>
-                        <p>Vehiculo : <b>${row.MARCA} - ${row.MODELO} - ${row.PATENTE} </b></p>
+                        <p>Vehiculo : <b>${row.MARCA} - ${row.MODELO} - <span>${row.PATENTE}</span></b></p>
                         <p>Compañia : <b>${row.COMPAÑÍA} </b></p>
                         <p>Proceso : <b>${row.PROCESO} </b></p>
                         <p>Fecha de entrega : <b>${ ((row['FECHA DE ENTREGA']) ? row['FECHA DE ENTREGA'] : '-')} </b></p>
