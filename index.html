@@ -40,11 +40,13 @@
 
     <h1>Visualizador de Datos para Taller Mecánico</h1>
 
-    <div class="container-visualizer"></div>
-    <div id="app"></div>
+    <div id="container-visualizer" class="container-visualizer"></div>
 
 
     <script>
+
+    const appDiv = document.getElementById("container-visualizer");
+    appDiv.innerHTML = `Listado`;
 
     fetch(
     "https://opensheet.elk.sh/1mVAvv0lEFpYTzURD5ep_kPh4ww6-_BX7p_4sXq_ylik/1"
@@ -54,7 +56,14 @@
         data.forEach((row) => {
         // Do something with each row here.
             console.log(row);
-        });
+            appDiv.innerHTML += `<div class="item">
+                <div class="photo"></div>
+                <h4>${row.MARCA}</h4>
+                <p>${row.MODELO} </p>
+                <p>${row.PATENTE} </p>
+                <p>${row.PROCESO} </p>
+                </div>`;
+            });
     });
 
 
