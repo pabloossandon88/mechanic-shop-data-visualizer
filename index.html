@@ -31,24 +31,24 @@
             grid-template-columns: 1fr 1fr 1fr;
         }
 
-        .container-visualizer .item{
+        .container-visualizer .item-vehiculo{
             border-bottom: 2px solid #343434;
             border-right: 2px solid #343434;
             width: 100%;
 
         }
 
-        .container-visualizer .item p:nth-child(n){
+        .container-visualizer .item-vehiculo p:nth-child(n){
             padding: 0px 10px;
             font-size: 12px;
         }
 
-        .container-visualizer .item p b{
+        .container-visualizer .item-vehiculo p b{
             color: #44d62c;
             font-size: 16px;
         }
 
-        .container-visualizer .item p span{
+        .container-visualizer .item-vehiculo p span{
             background: white;
             color: black;
             padding: 4px 10px;
@@ -87,12 +87,12 @@
         data.forEach((row) => {
 
             if(cont == 0 ) {
-                appDiv.innerHTML += `<div>`;
+                appDiv.innerHTML += `<div class="item">`;
             }
         
             if( cont <= 5 ){
                 appDiv.innerHTML += `
-                    <div class="item">
+                    <div class="item-vehiculo">
                         <div class="photo"></div>
                         <div style="display: flex; justify-content: space-between">
                             <p>Vehículo : <b>${row.MARCA} - ${row.MODELO}</b></p>
