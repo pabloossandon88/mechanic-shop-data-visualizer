@@ -76,6 +76,7 @@
     <script>
 
     const appDiv = document.getElementById("container-visualizer");
+    var innerH = ``;
     appDiv.innerHTML = ``;
 
     fetch(
@@ -91,13 +92,13 @@
 
             if(cont == 0 ) {
                 console.log('cont == 0');
-                appDiv.innerHTML += `<div class="item">`;
+                innerH += `<div class="item">`;
             }
 
             
         
             if( cont <= 5 ){
-                appDiv.innerHTML += `
+                innerH += `
                     <div class="item-vehiculo">
                         <div class="photo"></div>
                         <div style="display: flex; justify-content: space-between">
@@ -117,7 +118,7 @@
             console.log('count :: ', cont);
 
             if(cont == 6 ) {
-                appDiv.innerHTML += `</div>`;
+                innerH += `</div>`;
                 cont = 0 ;
             }
             
@@ -126,8 +127,10 @@
 
         if(cont != 6) {
             console.log('cont != 6');
-            appDiv.innerHTML += `</div>`;
+            innerH += `</div>`;
         }
+
+        appDiv.innerHTML = innerH;
             
     });
 
