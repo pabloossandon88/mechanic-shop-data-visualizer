@@ -91,11 +91,11 @@
         var cont = 0;
         data.forEach((row) => {
 
-            console.log('row :: ', row);
-            console.log('count :: ', cont);
+            //console.log('row :: ', row);
+            //console.log('count :: ', cont);
 
             if(cont == 0 ) {
-                console.log('cont == 0');
+                //console.log('cont == 0');
                 innerH += `<div class="item">`;
             }
 
@@ -119,7 +119,7 @@
 
             cont++;
 
-            console.log('count :: ', cont);
+            //console.log('count :: ', cont);
 
             if(cont == 6 ) {
                 innerH += `</div>`;
@@ -130,7 +130,7 @@
         });
 
         if(cont != 6) {
-            console.log('cont != 6');
+            //console.log('cont != 6');
             innerH += `</div>`;
         }
 
