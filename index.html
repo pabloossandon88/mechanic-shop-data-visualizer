@@ -6,7 +6,9 @@
     <title>Fenix Automotriz -  Visualizador de Datos para Taller Mecánico</title>
 
     <script async type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!--
     <script async type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    -->
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
@@ -34,7 +36,7 @@
         }
 
         .container-visualizer .item{
-            display: grid;
+            display: grid !important;
             grid-template-columns: 1fr 1fr 1fr;
         }
 
@@ -134,20 +136,31 @@
 
         console.log('final');
         appDiv.innerHTML = innerH;
+        slickSliderCreate();
             
     });
 
 
-    jQuery(document).ready(function(){
-        
-        console.log('document ready');
+    
 
-        jQuery('.container-visualizer').slick({
-            dots: true,
-            autoplay: true,
-            autoplaySpeed: 2000
-        });
-    });
+    function slickSliderCreate() {
+        jQuery(document).ready(function(){
+        
+            console.log('document ready');
+
+            setTimeout(() => {
+                console.log('setTimeout');
+                jQuery('.container-visualizer').slick({
+                    dots: true,
+                    autoplay: true,
+                    autoplaySpeed: 4000
+                });
+                
+            }, 2000);
+
+            
+        }); 
+    }
     </script>
 
 </body>
