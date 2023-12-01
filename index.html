@@ -28,7 +28,7 @@
             border-radius: 10px;
             color: white;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
         }
 
         .container-visualizer .item{
@@ -40,7 +40,6 @@
         }
 
         .container-visualizer .item p:nth-child(n){
-            width: 14vw;
             padding: 0px 10px;
         }
 
@@ -71,15 +70,15 @@
         var cont = 0;
         data.forEach((row) => {
         
-            if( cont <= 3 ){
+            if( cont <= 5 ){
                 appDiv.innerHTML += `
                     <div class="item">
                         <div class="photo"></div>
-                        <p>${row.MARCA} - ${row.MODELO} - ${row.PATENTE}</p>
-                        <p>${row.COMPAÑÍA} </p>
-                        <p>${row.PROCESO} </p>
-                        <p>${ ((row['FECHA DE ENTREGA']) ? row['FECHA DE ENTREGA'] : '-')} </p>
-                        <p>${ ((row['MAESTRO A CARGO']) ? row['MAESTRO A CARGO'] : '-')} </p>
+                        <p>Vehiculo : <b>${row.MARCA} - ${row.MODELO} - ${row.PATENTE} </b></p>
+                        <p>Compañia : <b>${row.COMPAÑÍA} </b></p>
+                        <p>Proceso : <b>${row.PROCESO} </b></p>
+                        <p>Fecha de entrega : <b>${ ((row['FECHA DE ENTREGA']) ? row['FECHA DE ENTREGA'] : '-')} </b></p>
+                        <p>Maestro a cargo : <b>${ ((row['MAESTRO A CARGO']) ? row['MAESTRO A CARGO'] : '-')} </b></p>
                     </div>`;
                 
             }
