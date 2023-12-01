@@ -86,9 +86,14 @@
         var cont = 0;
         data.forEach((row) => {
 
+            console.log('row :: ', row);
+            console.log('count :: ', count);
+
             if(cont == 0 ) {
                 appDiv.innerHTML += `<div class="item">`;
             }
+
+            
         
             if( cont <= 5 ){
                 appDiv.innerHTML += `
@@ -108,15 +113,17 @@
 
             cont++;
 
+            console.log('count :: ', count);
+
             if(cont == 6 ) {
                 appDiv.innerHTML += `</div>`;
                 cont = 0 ;
             }
-
+            
             
         });
 
-        if(cont != 6 ) {
+        if(cont != 6) {
             appDiv.innerHTML += `</div>`;
         }
             
