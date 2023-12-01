@@ -42,10 +42,13 @@
         request.open('GET', 'https://docs.google.com/spreadsheets/d/1mVAvv0lEFpYTzURD5ep_kPh4ww6-_BX7p_4sXq_ylik/edit#gid=0', true);
 
         request.onload = function() {
+            console.log('request request :: ', request);
+            
         if (request.status >= 200 && request.status < 400) {
             // Success!
             var data = JSON.parse(request.responseText);
             console.log('DATA : ', data);
+
         } else {
             // We reached our target server, but it returned an error
 
