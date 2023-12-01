@@ -40,12 +40,22 @@
 
         .container-visualizer .item p:nth-child(n){
             padding: 0px 10px;
-            font-size: 18px;
+            font-size: 14px;
         }
 
         .container-visualizer .item p b{
             color: #44d62c;
-            font-size: 25px;
+            font-size: 18px;
+        }
+
+        .container-visualizer .item p b span{
+            background: white;
+            color: black;
+            padding: 4px 10px;
+            border-radius: 5px;
+            letter-spacing: 4px;
+            outline: solid white 2px;
+            border: solid black 4px;
         }
 
 
@@ -79,7 +89,7 @@
                 appDiv.innerHTML += `
                     <div class="item">
                         <div class="photo"></div>
-                        <p>Vehiculo : <b>${row.MARCA} - ${row.MODELO} - <span>${row.PATENTE}</span></b></p>
+                        <p>Vehiculo : <b>${row.MARCA} - ${row.MODELO}</b> <b>Patente : <span>${row.PATENTE}</span></b></p>
                         <p>Compañia : <b>${row.COMPAÑÍA} </b></p>
                         <p>Proceso : <b>${row.PROCESO} </b></p>
                         <p>Fecha de entrega : <b>${ ((row['FECHA DE ENTREGA']) ? row['FECHA DE ENTREGA'] : '-')} </b></p>
