@@ -76,8 +76,8 @@
                     <p>${row.PATENTE} </p>
                     <p>${row.PROCESO} </p>
                     <p>${row.COMPAÑÍA} </p>
-                    <p>${row['FECHA DE ENTREGA']} </p>
-                    <p>${row['MAESTRO A CARGO']} </p>
+                    <p>${ ((row['FECHA DE ENTREGA']) ? row['FECHA DE ENTREGA'] : '-')} </p>
+                    <p>${ ((row['MAESTRO A CARGO']) ? row['MAESTRO A CARGO'] : '-')} </p>
                 </div>`;
             });
     });
