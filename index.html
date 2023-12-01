@@ -40,12 +40,12 @@
 
         .container-visualizer .item p:nth-child(n){
             padding: 0px 10px;
-            font-size: 14px;
+            font-size: 12px;
         }
 
         .container-visualizer .item p b{
             color: #44d62c;
-            font-size: 18px;
+            font-size: 16px;
         }
 
         .container-visualizer .item p span{
@@ -60,11 +60,12 @@
 
 
     </style>
+
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
 </head>
 <body>
-
-    
-
     <img src="https://www.fenixautomotriz.cl/wp-content/uploads/2018/11/logo_high_resolution.jpg" alt="">
 
     <h1>Visualizador de Datos para Taller Mecánico</h1>
@@ -84,6 +85,10 @@
     .then((data) => {
         var cont = 0;
         data.forEach((row) => {
+
+            if(cont == 0 ) {
+                appDiv.innerHTML += `<div>`;
+            }
         
             if( cont <= 5 ){
                 appDiv.innerHTML += `
@@ -101,12 +106,30 @@
                 
             }
 
+            if(cont == 5 ) {
+                appDiv.innerHTML += `</div>`;
+            }
+
             cont++;
         });
+
+        if(cont != 6 ) {
+            appDiv.innerHTML += `</div>`;
+        }
             
     });
 
 
+    </script>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>    
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $('.container-visualizer').slick();
+        });
     </script>
 
 </body>
