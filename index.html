@@ -106,11 +106,14 @@
                 
             }
 
-            if(cont == 5 ) {
+            cont++;
+
+            if(cont == 6 ) {
                 appDiv.innerHTML += `</div>`;
+                cont = 0 ;
             }
 
-            cont++;
+            
         });
 
         if(cont != 6 ) {
