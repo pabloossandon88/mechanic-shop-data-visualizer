@@ -89,7 +89,10 @@
                 appDiv.innerHTML += `
                     <div class="item">
                         <div class="photo"></div>
-                        <p>Vehiculo : <b>${row.MARCA} - ${row.MODELO}</b>      Patente : <span>${row.PATENTE}</span></b></p>
+                        <div style="display: flex; justify-content: space-between">
+                            <p>Vehiculo : <b>${row.MARCA} - ${row.MODELO}</b></p>
+                            <p>Patente : <span>${row.PATENTE}</span></p>
+                        </div>
                         <p>Compañia : <b>${row.COMPAÑÍA} </b></p>
                         <p>Proceso : <b>${row.PROCESO} </b></p>
                         <p>Fecha de entrega : <b>${ ((row['FECHA DE ENTREGA']) ? row['FECHA DE ENTREGA'] : '-')} </b></p>
