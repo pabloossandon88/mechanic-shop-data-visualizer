@@ -27,10 +27,11 @@
             box-shadow: 0px 70px 160px -42px rgba(0,0,0,0.3);
             border-radius: 10px;
             color: white;
+            display: grid;
+            grid-template-columns: 50vw 50vw;
         }
 
         .container-visualizer .item{
-            display: flex;
             margin: 10px auto;
             border-bottom: 2px solid white;
 
@@ -72,17 +73,15 @@
                 appDiv.innerHTML += `
                     <div class="item">
                         <div class="photo"></div>
-                        <p>${row.MARCA}</p>
-                        <p>${row.MODELO} </p>
-                        <p>${row.PATENTE} </p>
-                        <p>${row.PROCESO} </p>
+                        <p>${row.MARCA} - ${row.MODELO} - ${row.PATENTE}</p>
                         <p>${row.COMPAÑÍA} </p>
+                        <p>${row.PROCESO} </p>
                         <p>${ ((row['FECHA DE ENTREGA']) ? row['FECHA DE ENTREGA'] : '-')} </p>
                         <p>${ ((row['MAESTRO A CARGO']) ? row['MAESTRO A CARGO'] : '-')} </p>
                     </div>`;
                 
             }
-            
+
             cont++;
         });
             
