@@ -37,7 +37,7 @@
         }
 
         .container-visualizer .item p:nth-child(n){
-            width: 18vw;
+            width: 14vw;
             padding: 0px 10px;
         }
 
@@ -65,21 +65,27 @@
     )
     .then((res) => res.json())
     .then((data) => {
+        var cont = 0;
         data.forEach((row) => {
-        // Do something with each row here.
-            console.log(row);
-            appDiv.innerHTML += `
-                <div class="item">
-                    <div class="photo"></div>
-                    <p>${row.MARCA}</p>
-                    <p>${row.MODELO} </p>
-                    <p>${row.PATENTE} </p>
-                    <p>${row.PROCESO} </p>
-                    <p>${row.COMPAÑÍA} </p>
-                    <p>${ ((row['FECHA DE ENTREGA']) ? row['FECHA DE ENTREGA'] : '-')} </p>
-                    <p>${ ((row['MAESTRO A CARGO']) ? row['MAESTRO A CARGO'] : '-')} </p>
-                </div>`;
-            });
+        
+            if( cont <= 3 ){
+                appDiv.innerHTML += `
+                    <div class="item">
+                        <div class="photo"></div>
+                        <p>${row.MARCA}</p>
+                        <p>${row.MODELO} </p>
+                        <p>${row.PATENTE} </p>
+                        <p>${row.PROCESO} </p>
+                        <p>${row.COMPAÑÍA} </p>
+                        <p>${ ((row['FECHA DE ENTREGA']) ? row['FECHA DE ENTREGA'] : '-')} </p>
+                        <p>${ ((row['MAESTRO A CARGO']) ? row['MAESTRO A CARGO'] : '-')} </p>
+                    </div>`;
+                
+            }
+            
+            cont++;
+        });
+            
     });
 
 
